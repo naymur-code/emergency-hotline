@@ -10,10 +10,10 @@ for (const heart of heartBtn) {
 }
 
 // call feature
-const collBtn = document.getElementsByClassName("coll-btn");
+const callBtn = document.getElementsByClassName("call-btn");
 let coin = parseInt(document.getElementById("coin").innerText);
-for (const coll of collBtn) {
-  coll.addEventListener("click", function (event) {
+for (const call of callBtn) {
+  call.addEventListener("click", function (event) {
     const item = event.target.parentNode.parentNode;
     const callHistory = document.getElementById("call-history");
 
