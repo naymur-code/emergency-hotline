@@ -9,7 +9,7 @@ for (const heart of heartBtn) {
   });
 }
 
-// coll feature 
+// call feature
 const collBtn = document.getElementsByClassName("coll-btn");
 let coin = parseInt(document.getElementById("coin").innerText);
 for (const coll of collBtn) {
@@ -19,9 +19,8 @@ for (const coll of collBtn) {
 
     if (coin >= 20) {
       alert(
-        `
-      ${item.children[1]?.innerText}
-      ${item.children[3]?.innerText}
+        ` 
+       Calling ${item.children[1]?.innerText} ${item.children[3]?.innerText}...
       `
       );
 
@@ -58,3 +57,21 @@ document.getElementById("clear-btn").addEventListener("click", function () {
   const callHistory = document.getElementById("call-history");
   callHistory.innerHTML = "";
 });
+
+// copy btn feature
+
+const copyBtn = document.getElementsByClassName("copy-btn");
+let copyCount = parseInt(document.getElementById("copyText").innerText);
+
+for (const copy of copyBtn) {
+  copy.addEventListener("click", function (event) {
+    alert(`Copy ${event.target.parentNode.parentNode.children[3].innerText}`);
+    navigator.clipboard.writeText(
+      event.target.parentNode.parentNode.children[3].innerText
+    );
+
+    copyCount++;
+
+    document.getElementById("copyText").innerText = copyCount;
+  });
+}
